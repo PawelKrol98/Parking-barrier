@@ -19,9 +19,9 @@ double calculateDistance()
 	return timer * 34.0 / 2000.0;
 }
 
-bool isDistanceBelow(double distance)
+bool isDistanceBelow(double distance, double value)
 {
-	return distance < 10.0;
+	return distance < value;
 }
 
 void hcsr04Init()

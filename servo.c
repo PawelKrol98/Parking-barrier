@@ -3,7 +3,7 @@
 
 void servoUp()
 {
-	for (int j = 0; j <100; j++)
+	for (int j = 0; j <10; j++)
 	{
 		PTB->PSOR |= (1<<SERVO);
 		DELAY_us(1800);
@@ -14,7 +14,7 @@ void servoUp()
 
 void servoDown()
 {
-	for (int j = 0; j <100; j++)
+	for (int j = 0; j <10; j++)
 	{
 		PTB->PSOR |= (1<<SERVO);
 		DELAY_us(700);
@@ -27,4 +27,5 @@ void servoInit()
 {
 	PORTB->PCR[SERVO] |= PORT_PCR_MUX(1);
 	PTB->PDDR |= (1<<SERVO);
+	servoDown();
 }

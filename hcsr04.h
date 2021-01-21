@@ -4,7 +4,7 @@
 #include <stdbool.h> 
 
 double calculateDistance(void);
-bool isDistanceBelow(double);
+bool isDistanceBelow(double, double);
 void hcsr04Init(void);
 
 #endif
