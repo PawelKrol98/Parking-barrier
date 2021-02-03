@@ -3,23 +3,31 @@
 
 void servoUp()
 {
-	for (int j = 0; j <10; j++)
+	uint32_t highTime;
+	uint32_t lowTime;
+	for(uint32_t j = 1300; j > 200; j = j - 15)
 	{
 		PTB->PSOR |= (1<<SERVO);
-		DELAY_us(1800);
+		highTime = 2000 - j;
+		DELAY_us(highTime);
 		PTB->PCOR |= (1<<SERVO);
-		DELAY_us(18200);
+		lowTime = 18000 + j;
+		DELAY_us(lowTime);
 	}
 }
 
 void servoDown()
 {
-	for (int j = 0; j <10; j++)
+	uint32_t highTime;
+	uint32_t lowTime;
+	for(uint32_t j = 200; j < 1300; j = j + 15)
 	{
 		PTB->PSOR |= (1<<SERVO);
-		DELAY_us(700);
+		highTime = 2000 - j;
+		DELAY_us(highTime);
 		PTB->PCOR |= (1<<SERVO);
-		DELAY_us(19300);
+		lowTime = 18000 + j;
+		DELAY_us(lowTime);
 	}
 }
 
